@@ -9,7 +9,7 @@ import { loadFull } from 'tsparticles';
 const Hero = () => {
   const [darkMode, setDarkMode] = useState(true);
 
-  // Particle Init
+  // Particle Init without strict typing to avoid type mismatch error
   const particlesInit = async (engine: any) => {
     await loadFull(engine);
   };
@@ -49,7 +49,7 @@ const Hero = () => {
 
       {/* Hero Section Content */}
       <section
-       className={`relative z-10 w-full flex flex-col md:flex-row items-center justify-center px-6 md:px-20 py-16 text-${darkMode ? 'white' : 'black'}`}
+        className={`relative z-10 w-full flex flex-col md:flex-row items-center justify-center px-6 md:px-20 py-16 text-${darkMode ? 'white' : 'black'}`}
       >
         {/* Left Content */}
         <motion.div
@@ -59,7 +59,7 @@ const Hero = () => {
           className="flex-1 text-center md:text-left space-y-6"
         >
           <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-            Hi, I’m <span className="text-[#00FFFF]"> Muhammad Tahir Hasni </span>
+            Hi, I&rsquo;m <span className="text-[#00FFFF]"> Muhammad Tahir Hasni </span>
           </h1>
 
           <h2 className="text-xl md:text-2xl">
@@ -75,22 +75,22 @@ const Hero = () => {
           </h2>
 
           <p className={`max-w-xl ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-          A Frontend Developer crafting modern, high-performance web experiences.
+            A Frontend Developer crafting modern, high-performance web experiences.
 
-          Specialized in building dynamic and scalable applications with **Next.js**, **TypeScript**, and **Sanity CMS**.  
-          I focus on clean code, performance, and exceptional user experience.
+            Specialized in building dynamic and scalable applications with **Next.js**, **TypeScript**, and **Sanity CMS**.  
+            I focus on clean code, performance, and exceptional user experience.
 
-          🚀 Let’s build something amazing together.
+            🚀 Let&rsquo;s build something amazing together.
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center md:justify-start">
-          <a
-           href="/Resume_Muhammad_Tahir_Hasni.pdf"
-           download="Resume_Muhammad_Tahir_Hasni.pdf"
-           className="bg-[#00FFFF] text-black font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform"
-           >
-            Download CV
-          </a>
+            <a
+              href="/Resume_Muhammad_Tahir_Hasni.pdf"
+              download="Resume_Muhammad_Tahir_Hasni.pdf"
+              className="bg-[#00FFFF] text-black font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform"
+            >
+              Download CV
+            </a>
             <a
               href="#contact"
               className={`border px-6 py-3 rounded-full hover:bg-white hover:text-black transition-colors ${darkMode ? 'border-white text-white' : 'border-black text-black'}`}
@@ -107,13 +107,13 @@ const Hero = () => {
             <a href="https://github.com/tahirbaba" target="_blank" rel="noopener noreferrer">
               <FaGithub size={28} className="hover:text-[#00FFFF] transition-colors" />
             </a>
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammadtahirhasni@gmail.com"
-               target="_blank"
-               rel="noopener noreferrer"
-               >
-               <FaEnvelope size={28} className="hover:text-[#00FFFF] transition-colors" />
+            <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammadtahirhasni@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaEnvelope size={28} className="hover:text-[#00FFFF] transition-colors" />
             </a>
-
           </div>
         </motion.div>
 
