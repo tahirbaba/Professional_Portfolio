@@ -3,39 +3,24 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaLinkedin, FaGithub, FaEnvelope, FaSun, FaMoon } from 'react-icons/fa';
 import { Typewriter } from 'react-simple-typewriter';
-import Particles from 'react-tsparticles';
-import { loadFull } from 'tsparticles';
 
 const Hero = () => {
   const [darkMode, setDarkMode] = useState(true);
-
-  // Particle Init without strict typing to avoid type mismatch error
-  const particlesInit = async (engine: any) => {
-    await loadFull(engine);
-  };
 
   const handleToggle = () => {
     setDarkMode(!darkMode);
   };
 
   return (
-    <div className={`${darkMode ? 'bg-[#0f0c29]' : 'bg-white'} relative min-h-screen`}>
-      {/* Background Particles */}
-      <Particles
-        id="tsparticles"
-        init={particlesInit}
-        options={{
-          background: { color: { value: darkMode ? '#0f0c29' : '#ffffff' } },
-          fpsLimit: 60,
-          particles: {
-            number: { value: 50 },
-            size: { value: 3 },
-            move: { enable: true, speed: 2 },
-            links: { enable: true, color: '#00FFFF', distance: 150 },
-          },
-        }}
-        className="absolute top-0 left-0 w-full h-full z-0"
-      />
+    <div className={`${darkMode ? 'bg-[#0f0c29]' : 'bg-white'} relative min-h-screen overflow-hidden`}>
+      {/* Simple Particle Background with CSS */}
+      <div className="absolute top-0 left-0 w-full h-full z-0 pointer-events-none">
+        <div className="particle" />
+        <div className="particle" />
+        <div className="particle" />
+        <div className="particle" />
+        <div className="particle" />
+      </div>
 
       {/* Toggle Button */}
       <div className="absolute top-6 right-6 z-10">
@@ -131,6 +116,48 @@ const Hero = () => {
           />
         </motion.div>
       </section>
+
+      <style jsx>{`
+        .particle {
+          position: absolute;
+          width: 15px;
+          height: 15px;
+          background: ${darkMode ? '#00FFFF' : '#007BFF'};
+          border-radius: 50%;
+          animation: moveParticle 10s linear infinite;
+          opacity: 0.7;
+        }
+        .particle:nth-child(1) {
+          top: 20%;
+          left: 15%;
+          animation-delay: 0s;
+        }
+        .particle:nth-child(2) {
+          top: 40%;
+          left: 70%;
+          animation-delay: 3s;
+        }
+        .particle:nth-child(3) {
+          top: 60%;
+          left: 40%;
+          animation-delay: 6s;
+        }
+        .particle:nth-child(4) {
+          top: 80%;
+          left: 80%;
+          animation-delay: 9s;
+        }
+        .particle:nth-child(5) {
+          top: 50%;
+          left: 20%;
+          animation-delay: 12s;
+        }
+        @keyframes moveParticle {
+          0% { transform: translate(0, 0); }
+          50% { transform: translate(30px, 30px); }
+          100% { transform: translate(0, 0); }
+        }
+      `}</style>
     </div>
   );
 };
