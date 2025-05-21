@@ -15,11 +15,11 @@ const Navbar = () => {
         
         {/* Goat Image Logo */}
         <div className="flex items-center gap-2">
-          <img
-            src="/markher-icon.png"
-            alt="Markhor Logo"
-            className="w-9 h-9 object-contain"
-          />
+    <img
+      src="/markher-icon.png"
+      alt="Markhor Logo"
+      className="w-9 h-9 object-contain filter brightness-0 invert"
+      />
           <span className="text-2xl font-bold text-indigo-400">Baba Portfolio</span>
         </div>
 

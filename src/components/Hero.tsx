@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaEnvelope, FaSun, FaMoon } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope, FaSun, FaMoon, FaWhatsapp } from 'react-icons/fa';
 import { Typewriter } from 'react-simple-typewriter';
 
 const Hero = () => {
@@ -91,6 +91,13 @@ const Hero = () => {
             </a>
             <a href="https://github.com/tahirbaba" target="_blank" rel="noopener noreferrer">
               <FaGithub size={28} className="hover:text-[#00FFFF] transition-colors" />
+            </a>
+            <a
+               href="https://wa.me/message/WQJIKUBTECFEG1"
+               target="_blank"
+               rel="noopener noreferrer"
+            >
+               <FaWhatsapp size={28} className="text-gray-400 hover:text-green-500 transition" />
             </a>
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammadtahirhasni@gmail.com"

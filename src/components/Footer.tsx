@@ -15,7 +15,7 @@ const Footer = () => {
         transition={{ duration: 0.6 }}
       >
         <p className="text-sm text-gray-400">
-          © {new Date().getFullYear()} Your Name. All rights reserved.
+          © {new Date().getFullYear()} Muhammad Tahir Hasni. All rights reserved.
         </p>
 
         <div className="flex gap-6 text-xl">
